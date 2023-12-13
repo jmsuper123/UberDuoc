@@ -1,0 +1,8 @@
+{
+  "name": "Evaluacion",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

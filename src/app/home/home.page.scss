@@ -1,0 +1,138 @@
+.contenido {
+  min-height: 90vh;
+  width: 100%;
+}
+
+.menu {
+  min-height: 10vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  filter: drop-shadow(0px -3px 4px #a9a9a9);
+}
+
+.boton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    font-size: 1.6rem;
+    color: #818181;
+    align-self: center;
+  }
+
+  h4 {
+    font-size: .8rem;
+    margin: 0;
+    color: #000000;
+  }
+}
+
+.arriva {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  column-gap: 20px;
+  padding: 10px 20px;
+
+  ion-icon {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+  }
+}
+
+.centro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mes {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5%;
+  border-bottom: px #ffffff solid;
+  row-gap: 10px;
+
+  h2 {
+    font-size: 1.1rem;
+    margin: 5px 0px;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  ion-icon {
+    font-size: 1.4rem;
+    background-color: #00c3ff;
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: #797979;
+    font-size: .8rem;
+  }
+}
+
+ion-accordion {
+  flex-direction: column;
+  display: flex;
+  align-content: center;
+  padding: 5%;
+}
+
+.perfil_resumido{
+  padding: 4%;
+  margin: 4%;
+  background-color: #0077ff;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5%;
+  img{
+    width: 30%;
+    border-radius: 100%;
+    margin: 1%;
+    padding: 1%;
+  }
+  h6{
+    margin: 5%;
+    padding: 5%;
+  }
+}
+.favoritos{
+  border: #00c3ff;
+  border-style: solid;
+  border-width: 5px;
+}
+.ruta_favorita{
+  h5{
+    background-color: #00c3ff;
+    filter: drop-shadow(0px -2px 15px #00c3ff);
+  }
+}
+.bot{
+  justify-content: center;
+  background-color: #00c3ff;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+}

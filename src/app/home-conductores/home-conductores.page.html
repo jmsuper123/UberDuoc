@@ -1,0 +1,93 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="contenido">
+      <div class="arriva">
+        <ion-icon name="arrow-back-circle" [routerLink]="['/login']"></ion-icon>
+        <h2>Cerrar sesión</h2>
+        <button (click)="cerrarSesion()" class="cerrar-sesion-button">Cerrar Sesión</button>
+      </div>
+      <div class="centro">
+        <div class="history">
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="primary">
+                <h2>Historial</h2>
+              </ion-item>
+              <div class="mes" slot="content">
+                <h2>Julio</h2>
+                <div class="info">
+                  <ion-icon name="bag"></ion-icon>
+                  <div class="texto">
+                    <h3>De la casa al Duoc</h3>
+                    <p>Julio 20 - 2022 8:00 AM</p>
+                  </div>
+                </div>
+                <div class="info">
+                  <ion-icon name="bag"></ion-icon>
+                  <div class="texto">
+                    <h3>Del Duoc a la casa</h3>
+                    <p>Julio 20 - 2022 1:50 PM</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mes" slot="content">
+                <h2>Agosto</h2>
+                <div class="info">
+                  <ion-icon name="bag"></ion-icon>
+                  <div class="texto">
+                    <h3>De la casa al Duoc</h3>
+                    <p>Agosto 4 - 2022 1:00 PM</p>
+                  </div>
+                </div>
+                <div class="info">
+                  <ion-icon name="bag"></ion-icon>
+                  <div class="texto">
+                    <h3>Del Duoc a la casa</h3>
+                    <p>Agosto 4 - 2022 17:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </div>
+        <div class="user">
+          <div class="perfil_resumido" [routerLink]="['/profiel']">
+            <img class="perfil"
+              src="https://wl-genial.cf.tsp.li/resize/728x/jpg/998/af8/8012d855ecac748fdf628d682d.jpg">
+            <h6>Seba123</h6>
+          </div>
+        </div>
+        <div class="favoritos">
+          <h4>Rutas Favoritas</h4>
+          <div class="ruta_favorita">
+            <img class="Mapa" src="https://www.google.com/maps/d/thumbnail?mid=1VnrPww1dxvzWFAWez7sTzBeBy-8&hl=en_US"
+              alt="">
+            <h5>De la casa al Duoc</h5>
+          </div>
+          <div class="bot" [routerLink]="['/usual-routes']">
+            <ion-icon name="add-circle-outline"></ion-icon><h6>Rutas guardadas</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <div class="boton" [routerLink]="['/home-conductores']">
+        <ion-icon name="home" color="primary"></ion-icon>
+        <h4>Inicio</h4>
+      </div>
+      <div class="boton" [routerLink]="['/usual-routes']">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <h4>Mis Rutas</h4>
+      </div>
+      <div class="boton" [routerLink]="['/map']">
+        <ion-icon name="navigate"></ion-icon>
+        <h4>Mapa</h4>
+      </div>
+      <div class="boton" [routerLink]="['/profiel']">
+        <ion-icon name="person-circle"></ion-icon>
+        <h4>Perfil</h4>
+      </div>
+    </div>
+  </div>
+</ion-content>

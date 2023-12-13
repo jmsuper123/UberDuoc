@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+  <div #map id="map"></div>
+  <div class="flotante">
+    <!-- Reemplazo del contenido por un encabezado con enlace -->
+    <h4 [routerLink]="['/viajes-usuarios']">Viajes disponibles</h4>
+  </div>
+  <div class="menu">
+    <div class="boton" [routerLink]="['/home']">
+      <ion-icon name="home" color="primary"></ion-icon>
+      <h4>Inicio</h4>
+    </div>
+    <div class="boton" [routerLink]="['/usual-routes']">
+      <ion-icon name="bookmark-outline"></ion-icon>
+      <h4>Mis Rutas</h4>
+    </div>
+    <div class="boton" [routerLink]="['/map-usuaios']">
+      <ion-icon name="navigate"></ion-icon>
+      <h4>Mapa</h4>
+    </div>
+    <div class="boton" [routerLink]="['/profiel']">
+      <ion-icon name="person-circle"></ion-icon>
+      <h4>Perfil</h4>
+    </div>
+  </div>
+</ion-content>

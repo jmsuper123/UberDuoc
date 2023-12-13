@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="contenido">
+      <div class="arriva">
+        <ion-icon name="arrow-back-circle" [routerLink]="['/home']"></ion-icon>
+        <h2>Pagina principal</h2>
+      </div>
+      <div class="centro">
+        <h3>Mis Rutas</h3>
+        <div class="ruta_favorita" [routerLink]="['/map']">
+          <img class="Mapa" src="https://www.google.com/maps/d/thumbnail?mid=1VnrPww1dxvzWFAWez7sTzBeBy-8&hl=en_US" alt="">
+          <h6>De la casa al Duoc</h6>
+        </div>
+        <div class="ruta_favorita" [routerLink]="['/map']">
+          <img class="Mapa" src="https://www.google.com/maps/d/thumbnail?mid=1VnrPww1dxvzWFAWez7sTzBeBy-8&hl=en_US" alt="">
+          <h6>Del Duoc a la casa</h6>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="boton" [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        <h4>Inicio</h4>
+      </div>
+      <div class="boton" [routerLink]="['/usual-routes']">
+        <ion-icon name="bookmark-outline" color="primary"></ion-icon>
+        <h4>Mis Rutas</h4>
+      </div>
+      <div class="boton" [routerLink]="['/map']">
+        <ion-icon name="navigate"></ion-icon>
+        <h4>Mapa</h4>
+      </div>
+      <div class="boton" [routerLink]="['/profiel']">
+        <ion-icon name="person-circle"></ion-icon>
+        <h4>Perfil</h4>
+      </div>
+    </div>
+  </div>
+</ion-content>

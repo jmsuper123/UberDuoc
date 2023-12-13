@@ -1,0 +1,66 @@
+.contenido{
+    min-height: 90vh;
+    width: 100%;
+  }
+  .menu{
+    min-height: 10vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    filter: drop-shadow(0px -3px 4px #a9a9a9);
+  }
+  .boton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    ion-icon {
+      font-size: 1.6rem;
+      color: #818181;
+      align-self: center;
+    }
+  
+    h4 {
+      font-size: .8rem;
+      margin: 0;
+      color: #000000;
+    }
+  }
+  .arriva{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    column-gap: 20px;
+    padding: 10px 20px;
+    ion-icon{
+      font-size: 2.5rem;
+      color: #1a1a1a;
+    }
+  }
+  
+  .centro{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h3{
+      margin-left: 3%;
+    }
+  }
+  .ruta_favorita{
+    border-radius: 5%;
+    border: #00c3ff;
+    border-style: solid;
+    border-width: 5px;
+    padding: 5%;
+    margin: 5%;
+    align-items: center;
+    background-color: #00c3ff;
+    h5{
+      filter: drop-shadow(0px -3px 15px #00c3ff);
+    }
+  }

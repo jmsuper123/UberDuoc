@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+  <div id="contenido">
+    <table *ngIf="viajes.length > 0">
+      <!-- Encabezados de la tabla -->
+      <tr>
+        <th>ID</th>
+        <th>HORA</th>
+        <th>CAPACIDAD</th>
+        <th>PRECIO</th>
+        <th>DESTINO</th>
+        <th>ACEPTAR VIAJE</th>
+      </tr>
+      <!-- Filas de datos de viajes -->
+      <tr *ngFor="let viaje of viajes">
+        <td>{{ viaje.id }}</td>
+        <td>{{ viaje.hora }}</td>
+        <td>{{ calcularCantidadPasajerosYCapacidad(viaje) }}</td>
+        <td>{{ viaje.precio }}</td>
+        <td>{{ viaje.destino }}</td>
+        <!-- Botón para aceptar el viaje -->
+        <td>
+          <button (click)="aceptarViaje(viaje)" class="btn-verde">Aceptar Viaje</button>
+        </td>
+      </tr>
+    </table>
+    
+    <!-- Mensaje cuando no hay viajes registrados -->
+    <div *ngIf="viajes.length === 0">
+      <p>No hay viajes registrados actualmente.</p>
+    </div>
+
+    <!-- Enlace para volver -->
+    <h2 [routerLink]="['/map-usuarios']">Volver</h2>
+  </div>
+</ion-content>

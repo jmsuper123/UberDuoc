@@ -1,0 +1,95 @@
+.contenido {
+  min-height: 90vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+.menu {
+  min-height: 10vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  filter: drop-shadow(0px -3px 4px #a9a9a9);
+
+}
+
+.boton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    font-size: 1.6rem;
+    color: #818181;
+    align-self: center;
+  }
+
+  h4 {
+    font-size: .8rem;
+    margin: 0;
+    color: #000000;
+  }
+}
+
+.arriva {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  column-gap: 20px;
+  padding: 10px 20px;
+
+  ion-icon {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+  }
+}
+
+.centro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  margin-top: 0.1%;
+  margin-bottom: 10%;
+  flex-direction: column;
+
+  h5 {
+    max-width: 100%;
+    margin: 0.5%;
+    font-size: .8rem;
+  }
+
+  ion-label {
+    font-size: 1rem;
+  }
+
+  .foto_y_nombre_usuario {
+    white-space: initial;
+
+    h4 {
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+    }
+
+    img {
+      display: flex;
+      align-items: center;
+      height: 25vh;
+      border-radius: 100%;
+      margin: 10%;
+      flex-direction: row;
+    }
+  }
+}

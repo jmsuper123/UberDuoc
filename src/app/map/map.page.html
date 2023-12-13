@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <div #map id="map"></div>
+  <div class="flotante">
+
+    <ion-list *ngIf="autocompleteItems" [hidden]="autocompleteItems.length == 0">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+    <div class="inputs">
+      <div class="input">
+        <label for="">Destino</label>
+        <input type="text" [(ngModel)]="toAdd.destino" (input)="updateSearchResults()" placeholder="Destino">
+      </div>
+      <div class="input">
+        <label for="">Precio</label>
+        <input type="text" [(ngModel)]="toAdd.precio" placeholder="1000">
+      </div>
+      <div class="input">
+        <label for="">Capacidad</label>
+        <input type="text" [(ngModel)]="toAdd.capacidad" placeholder="4">
+      </div>
+      <div class="input">
+        <label for="">Hora salida</label>
+        <input type="text" [(ngModel)]="toAdd.hora" placeholder="22:30">
+      </div>
+      <button (click)="crearViaje()">Agregar</button>
+      <h4 [routerLink]="['/viajes']">ver listado</h4>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="boton" [routerLink]="['/home-conductores']">
+      <ion-icon name="home" color="primary"></ion-icon>
+      <h4>Inicio</h4>
+    </div>
+    <div class="boton" [routerLink]="['/usual-routes']">
+      <ion-icon name="bookmark-outline"></ion-icon>
+      <h4>Mis Rutas</h4>
+    </div>
+    <div class="boton" [routerLink]="['/map']">
+      <ion-icon name="navigate"></ion-icon>
+      <h4>Mapa</h4>
+    </div>
+    <div class="boton" [routerLink]="['/profiel']">
+      <ion-icon name="person-circle"></ion-icon>
+      <h4>Perfil</h4>
+    </div>
+  </div>
+</ion-content>

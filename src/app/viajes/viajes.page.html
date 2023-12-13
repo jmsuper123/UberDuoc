@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true">
+  <div id="contenido">
+    <table *ngIf="viajes.length > 0">
+      <!-- Encabezados de la tabla -->
+      <tr>
+        <th>ID</th>
+        <th>HORA</th>
+        <th>CAPACIDAD</th>
+        <th>PRECIO</th>
+        <th>DESTINO</th>
+        <th>PASAJEROS</th>
+        <th>ELIMINAR</th> <!-- Nueva columna para el botón de eliminar -->
+        <th>MODIFICAR</th> <!-- Nueva columna para los botones de modificar -->
+        <th>REINICIAR</th>
+      </tr>
+      <!-- Filas de datos de viajes -->
+      <tr *ngFor="let viaje of viajes">
+        <td>{{viaje.id}}</td>
+        <td>{{viaje.hora}}</td>
+        <td>
+          <ng-container *ngIf="!viaje.editando">{{ viaje.pasajeros.length }} / {{ viaje.capacidad }}</ng-container>
+          <ng-container *ngIf="viaje.editando">{{ viaje.capacidad }}</ng-container>
+        </td>
+        <td>{{viaje.precio}}</td>
+        <td>{{viaje.destino}}</td>
+        <td>
+          <ul>
+            <li *ngFor="let pasajero of viaje.pasajeros">{{ pasajero }}</li>
+          </ul>
+        </td>
+        <!-- Botón de eliminar con estilo rojo -->
+        <td>
+          <button (click)="eliminarViaje(viaje)" class="btn-rojo">Eliminar</button>
+        </td>
+      </tr>
+      <tr *ngFor="let viaje of viajes; let i = index">
+        <td>{{viaje.id}}</td>
+        <td>
+          <!-- Utiliza ngIf para mostrar el input solo al presionar Modificar -->
+          <ng-container *ngIf="viaje.editando !== true">{{ viaje.hora }}</ng-container>
+          <input *ngIf="viaje.editando === true" type="text" [(ngModel)]="viajes[i].hora">
+        </td>
+        <td>
+          <!-- Utiliza ngIf para mostrar el input solo al presionar Modificar -->
+          <ng-container *ngIf="viaje.editando !== true">{{ viaje.capacidad }}</ng-container>
+          <input *ngIf="viaje.editando === true" type="number" [(ngModel)]="viajes[i].capacidad">
+        </td>
+        <td>
+          <!-- Utiliza ngIf para mostrar el input solo al presionar Modificar -->
+          <ng-container *ngIf="viaje.editando !== true">{{ viaje.precio }}</ng-container>
+          <input *ngIf="viaje.editando === true" type="number" [(ngModel)]="viajes[i].precio">
+        </td>
+        <td>
+          <!-- Utiliza ngIf para mostrar el input solo al presionar Modificar -->
+          <ng-container *ngIf="viaje.editando !== true">{{ viaje.destino }}</ng-container>
+          <input *ngIf="viaje.editando === true" type="text" [(ngModel)]="viajes[i].destino">
+        </td>
+        <!-- Columna para los botones de Modificar, Aceptar y Cancelar -->
+        <td>
+          <button *ngIf="!viaje.editando" (click)="editarViaje(viaje)" class="btn-azul">Modificar</button>
+          <button *ngIf="viaje.editando" (click)="confirmarEdicion(viaje)" class="btn-verde">Aceptar</button>
+          <button *ngIf="viaje.editando" (click)="cancelarEdicion(viaje)" class="btn-rojo">Cancelar</button>
+        </td>
+        <td>
+          <button (click)="reiniciarPasajeros(viaje)" class="btn-amarillo">Reiniciar</button>
+        </td>
+      </tr>
+      
+    </table>
+    
+    <!-- Mensaje cuando no hay viajes registrados -->
+    <div *ngIf="viajes.length === 0">
+      <p>No hay viajes registrados actualmente.</p>
+    </div>
+
+    <!-- Enlace para volver -->
+    <h2 [routerLink]="['/map']">Volver</h2>
+  </div>
+</ion-content>
+

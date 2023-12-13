@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="contenido">
+      <div class="arriba">
+        <ion-icon name="arrow-back-circle" [routerLink]="['/home']"></ion-icon>
+        <h2>Pagina principal</h2>
+      </div>
+      <div class="centro">
+        <div class="perfil">
+          <div class="foto_y_nombre_usuario">
+            <!-- Contenido común para ambos tipos de usuario -->
+            <img class="perfil" src="https://wl-genial.cf.tsp.li/resize/728x/jpg/998/af8/8012d855ecac748fdf628d682d.jpg">
+            <h4>{{ usuario }}</h4> <!-- Nombre de usuario -->
+          </div>
+        
+          <!-- Campos de perfil según el tipo de usuario -->
+          <ion-label floating>Nombre:</ion-label>
+          <h5>{{ nombre }}</h5>
+          <ion-label floating>Apellido:</ion-label>
+          <h5>{{ apellido }}</h5>
+          <ion-label floating>Email:</ion-label>
+          <h5>{{ email }}</h5>
+          <ion-label floating>Teléfono:</ion-label>
+          <h5>{{ telefono }}</h5>
+      </div>
+      </div>
+      <div class="menu">
+        <ng-container *ngIf="tipoUsuario === 'conductor'; else usuarioNormal">
+          <div class="botón" [routerLink]="['/home-conductores']">
+            <ion-icon name="home"></ion-icon>
+            <h4>Inicio</h4>
+          </div>
+        </ng-container>
+      
+        <ng-template #usuarioNormal>
+          <div class="botón" [routerLink]="['/home']">
+            <ion-icon name="home"></ion-icon>
+            <h4>Inicio</h4>
+          </div>
+        </ng-template>
+        <div class="boton" [routerLink]="['/usual-routes']">
+          <ion-icon name="bookmark-outline"></ion-icon>
+          <h4>Mis Rutas</h4>
+        </div>
+        <ng-container *ngIf="tipoUsuario === 'conductor'; else usuarioNormal">
+          <div class="botón" [routerLink]="['/map']">
+            <ion-icon name="home"></ion-icon>
+            <h4><Map></Map></h4>
+          </div>
+        </ng-container>
+      
+        <ng-template #usuarioNormal>
+          <div class="botón" [routerLink]="['/map-usuarios']">
+            <ion-icon name="home"></ion-icon>
+            <h4>Map</h4>
+          </div>
+        </ng-template>
+        <div class="boton" [routerLink]="['/profiel']">
+          <ion-icon name="person-circle" color="primary"></ion-icon>
+          <h4>Perfil</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
